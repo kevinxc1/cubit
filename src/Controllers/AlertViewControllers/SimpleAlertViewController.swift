@@ -1,9 +1,6 @@
 //
 //  SimpleAlertViewController.swift
-//  CompSim
-//
-//  Created by Rami Sbahi on 12/30/19.
-//  Copyright © 2019 Rami Sbahi. All rights reserved.
+//  Cubit
 //
 
 import UIKit

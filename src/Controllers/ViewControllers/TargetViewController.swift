@@ -1,9 +1,6 @@
 //
 //  TargetViewController.swift
-//  CompSim
-//
-//  Created by Rami Sbahi on 7/19/19.
-//  Copyright © 2019 Rami Sbahi. All rights reserved.
+//  Cubit
 //
 
 import UIKit
@@ -119,7 +116,7 @@ class TargetViewController: UIViewController {
         ToLabel.isHidden = false
         MinTimeLabel.isHidden = false
         DistributionLabel.isHidden = false
-        DistributionImage.isHidden = false
+        DistributionImage.isHidden = true
         ToLabel.isHidden = false
         self.changeDistLabels(hide: false)
     }
@@ -331,7 +328,7 @@ class TargetViewController: UIViewController {
         {
             button?.backgroundColor = .darkGray
         }
-        DistributionImage.image = UIImage(named: "DarkModeGaussianCurve")
+        // Image removed
         BlackWhiteLabels.forEach { (label) in
             label.textColor? = UIColor.white
         }
@@ -349,7 +346,7 @@ class TargetViewController: UIViewController {
         BlackWhiteLabels.forEach { (label) in
             label.textColor? = UIColor.black
         }
-        DistributionImage.image = UIImage(named: "GaussianCurve")
+        // Image removed
         WinningTimeSetting.tintColor = .white
         WinningTimeSetting.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: ViewController.fontToFitHeight(view: WinningTimeSetting, multiplier: 0.6, name: "Futura")], for: .normal)
     }

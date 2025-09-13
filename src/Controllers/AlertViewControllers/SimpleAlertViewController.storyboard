@@ -10,7 +10,7 @@
         <!--Simple Alert View Controller-->
         <scene sceneID="Tdq-Un-VzU">
             <objects>
-                <viewController storyboardIdentifier="SimpleAlertVC" id="E4s-TQ-qd6" customClass="SimpleAlertViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleAlertVC" id="E4s-TQ-qd6" customClass="SimpleAlertViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K6Y-9M-5Kf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

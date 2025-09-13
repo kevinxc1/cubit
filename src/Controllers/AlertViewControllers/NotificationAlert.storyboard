@@ -10,7 +10,7 @@
         <!--Notification Alert View Controller-->
         <scene sceneID="qj6-2A-eq6">
             <objects>
-                <viewController storyboardIdentifier="NotificationAlertVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Gb-Wn-yT0" customClass="NotificationAlertViewController" customModule="Pods_CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationAlertVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Gb-Wn-yT0" customClass="NotificationAlertViewController" customModule="Pods_Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qTg-Dw-KC0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

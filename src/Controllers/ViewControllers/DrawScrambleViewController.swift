@@ -1,9 +1,6 @@
 //
 //  DrawScrambleViewController.swift
-//  CompSim
-//
-//  Created by Rami Sbahi on 2/24/20.
-//  Copyright © 2020 Rami Sbahi. All rights reserved.
+//  Cubit
 //
 
 

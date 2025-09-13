@@ -1,9 +1,6 @@
 //
 //  ViewController.swift
-//  CompSim
-//
-//  Created by Rami Sbahi on 7/15/19.
-//  Copyright © 2019 Rami Sbahi. All rights reserved.
+//  Cubit
 //
 
 import UIKit
@@ -65,7 +62,7 @@ class ViewController: UIViewController {
     static var timing = true
     static var inspection = true
     
-    static var cuber = "Random"
+    static var cuber = "Lucas" // Simplified - no longer used for image selection
     
     static var holdingTime: Float = 0.55 
     

@@ -10,7 +10,7 @@
         <!--Add Solve Alert View Controller-->
         <scene sceneID="tsf-EB-Orq">
             <objects>
-                <viewController storyboardIdentifier="AddSolveAlertVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sxc-Bp-rG9" customClass="AddSolveAlertViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddSolveAlertVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sxc-Bp-rG9" customClass="AddSolveAlertViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WsM-m8-5OG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

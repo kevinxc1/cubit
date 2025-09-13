@@ -1,9 +1,6 @@
 //
 //  NotificationAlertViewController.swift
-//  CompSim
-//
-//  Created by Rami Sbahi on 1/9/20.
-//  Copyright © 2020 Rami Sbahi. All rights reserved.
+//  Cubit
 //
 
 import UIKit

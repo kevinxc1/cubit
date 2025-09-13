@@ -1,9 +1,6 @@
 //
 //  TwoByTwoSolver.swift
-//  CompSim
-//
-//  Created by Rami Sbahi on 7/28/19.
-//  Copyright © 2019 Rami Sbahi. All rights reserved.
+//  Cubit
 //
 
 import Foundation

@@ -1,9 +1,6 @@
 //
 //  StatsViewController.swift
-//  CompSim
-//
-//  Created by Rami Sbahi on 8/6/19.
-//  Copyright © 2019 Rami Sbahi. All rights reserved.
+//  Cubit
 //
 
 import UIKit

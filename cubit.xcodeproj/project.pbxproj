@@ -56,7 +56,7 @@
 		3690EB042316293200CB0B78 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 361231E722FD081C0044DEF1 /* Search.m */; };
 		3690EB052316293200CB0B78 /* TwoPhaseScrambler.h in Sources */ = {isa = PBXBuildFile; fileRef = 361231E922FD08500044DEF1 /* TwoPhaseScrambler.h */; };
 		3690EB062316293200CB0B78 /* TwoPhaseScrambler.m in Sources */ = {isa = PBXBuildFile; fileRef = 361231EA22FD08E80044DEF1 /* TwoPhaseScrambler.m */; };
-		3690EB072316293700CB0B78 /* CompSim-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 361231F022FD0B4E0044DEF1 /* CompSim-Bridging-Header.h */; };
+		3690EB072316293700CB0B78 /* Cubit-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 361231F022FD0B4E0044DEF1 /* Cubit-Bridging-Header.h */; };
 		3690EB0823162AF800CB0B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663DF3A22DD699D006657CF /* AppDelegate.swift */; };
 		3696537923BA45F8000784D9 /* AddSolveAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3696537823BA45F8000784D9 /* AddSolveAlert.storyboard */; };
 		3696537B23BA4671000784D9 /* AddSolveAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696537A23BA4671000784D9 /* AddSolveAlertViewController.swift */; };
@@ -69,7 +69,7 @@
 		3696538A23BA9F55000784D9 /* ViewSolveAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696538923BA9F55000784D9 /* ViewSolveAlertViewController.swift */; };
 		36A0A4AB23AF676600D41938 /* SolveTimeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A0A4AA23AF676600D41938 /* SolveTimeList.swift */; };
 		36B88A9123C7AD93004262CA /* NotificationAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B88A9023C7AD93004262CA /* NotificationAlertService.swift */; };
-		C79702DB2D2364D767859210 /* Pods_CompSim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A701408881740019BBE202B5 /* Pods_CompSim.framework */; };
+		C79702DB2D2364D767859210 /* Pods_Cubit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A701408881740019BBE202B5 /* Pods_Cubit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,7 +86,7 @@
 		361231EA22FD08E80044DEF1 /* TwoPhaseScrambler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoPhaseScrambler.m; sourceTree = "<group>"; };
 		361231ED22FD0ADF0044DEF1 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		361231EE22FD0AF70044DEF1 /* Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
-		361231F022FD0B4E0044DEF1 /* CompSim-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CompSim-Bridging-Header.h"; sourceTree = "<group>"; };
+		361231F022FD0B4E0044DEF1 /* Cubit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cubit-Bridging-Header.h"; sourceTree = "<group>"; };
 		361231F122FD289B0044DEF1 /* Clock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Clock.m; sourceTree = "<group>"; };
 		361231F322FD2A090044DEF1 /* Clock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Clock.h; sourceTree = "<group>"; };
 		361231F422FD2A360044DEF1 /* Megaminx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Megaminx.h; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		3617752223DE1A5A00FC6DCE /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		361C625E240479FF0003D26F /* DrawScrambleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawScrambleViewController.swift; sourceTree = "<group>"; };
 		36348225239C6E82009A14C7 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		3634822723A0615F009A14C7 /* SolveTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SolveTime.swift; path = CompSim/Session/SolveTime.swift; sourceTree = SOURCE_ROOT; };
+		3634822723A0615F009A14C7 /* SolveTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SolveTime.swift; path = Cubit/Session/SolveTime.swift; sourceTree = SOURCE_ROOT; };
 		3634822923A06653009A14C7 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		363D562123C7B2E000357368 /* NotificationAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertViewController.swift; sourceTree = "<group>"; };
 		363D562323C7B41A00357368 /* NotificationAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationAlert.storyboard; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		3654A84123BC02280066A48F /* LogoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogoViewController.swift; path = Controllers/ViewControllers/LogoViewController.swift; sourceTree = "<group>"; };
 		3654A84323BC09610066A48F /* 8seconds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8seconds.mp3; sourceTree = "<group>"; };
 		3654A84423BC09610066A48F /* 12seconds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12seconds.mp3; sourceTree = "<group>"; };
-		3663DF3722DD699D006657CF /* CompSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3663DF3722DD699D006657CF /* Cubit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cubit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3663DF3A22DD699D006657CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3663DF3F22DD699D006657CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3663DF4122DD699E006657CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		3663DF4C22DEBB5C006657CF /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		3663DF5022DEE4E5006657CF /* ScrambleReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrambleReader.swift; sourceTree = "<group>"; };
 		3669CEC1238B13A900F1D002 /* scrambles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scrambles.txt; sourceTree = "<group>"; };
-		3690EAC0231623E300CB0B78 /* CompSim.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CompSim.entitlements; sourceTree = "<group>"; };
+		3690EAC0231623E300CB0B78 /* Cubit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cubit.entitlements; sourceTree = "<group>"; };
 		3690EAE2231627A700CB0B78 /* Pyraminx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pyraminx.m; sourceTree = "<group>"; };
 		3696537823BA45F8000784D9 /* AddSolveAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSolveAlert.storyboard; sourceTree = "<group>"; };
 		3696537A23BA4671000784D9 /* AddSolveAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSolveAlertViewController.swift; sourceTree = "<group>"; };
@@ -139,9 +139,9 @@
 		3696538923BA9F55000784D9 /* ViewSolveAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSolveAlertViewController.swift; sourceTree = "<group>"; };
 		36A0A4AA23AF676600D41938 /* SolveTimeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveTimeList.swift; sourceTree = "<group>"; };
 		36B88A9023C7AD93004262CA /* NotificationAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertService.swift; sourceTree = "<group>"; };
-		51B11034A5437C664B7F3657 /* Pods-CompSim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CompSim.debug.xcconfig"; path = "Target Support Files/Pods-CompSim/Pods-CompSim.debug.xcconfig"; sourceTree = "<group>"; };
-		A701408881740019BBE202B5 /* Pods_CompSim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CompSim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2409226874AB7090A497119 /* Pods-CompSim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CompSim.release.xcconfig"; path = "Target Support Files/Pods-CompSim/Pods-CompSim.release.xcconfig"; sourceTree = "<group>"; };
+		51B11034A5437C664B7F3657 /* Pods-Cubit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cubit.debug.xcconfig"; path = "Target Support Files/Pods-Cubit/Pods-Cubit.debug.xcconfig"; sourceTree = "<group>"; };
+		A701408881740019BBE202B5 /* Pods_Cubit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cubit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2409226874AB7090A497119 /* Pods-Cubit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cubit.release.xcconfig"; path = "Target Support Files/Pods-Cubit/Pods-Cubit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C79702DB2D2364D767859210 /* Pods_CompSim.framework in Frameworks */,
+				C79702DB2D2364D767859210 /* Pods_Cubit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +159,7 @@
 		1D2965EAD58F8760A0905C1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A701408881740019BBE202B5 /* Pods_CompSim.framework */,
+				A701408881740019BBE202B5 /* Pods_Cubit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -188,7 +188,7 @@
 		3663DF2E22DD699D006657CF = {
 			isa = PBXGroup;
 			children = (
-				3663DF3922DD699D006657CF /* CompSim */,
+				3663DF3922DD699D006657CF /* Cubit */,
 				3663DF3822DD699D006657CF /* Products */,
 				D4BADD2EF749D20246CDFB2A /* Pods */,
 				1D2965EAD58F8760A0905C1A /* Frameworks */,
@@ -198,28 +198,28 @@
 		3663DF3822DD699D006657CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3663DF3722DD699D006657CF /* CompSim.app */,
+				3663DF3722DD699D006657CF /* Cubit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3663DF3922DD699D006657CF /* CompSim */ = {
+		3663DF3922DD699D006657CF /* Cubit */ = {
 			isa = PBXGroup;
 			children = (
 				360BC94623BBE56D00EE8324 /* Sounds */,
 				363B3A9923AAA2CE00000286 /* Session */,
-				3690EAC0231623E300CB0B78 /* CompSim.entitlements */,
+				3690EAC0231623E300CB0B78 /* Cubit.entitlements */,
 				3690EABB2316201900CB0B78 /* Controllers */,
 				3690EABA23161FCC00CB0B78 /* Scramblers */,
 				3663DF3E22DD699D006657CF /* Main.storyboard */,
 				3663DF3A22DD699D006657CF /* AppDelegate.swift */,
-				361231F022FD0B4E0044DEF1 /* CompSim-Bridging-Header.h */,
+				361231F022FD0B4E0044DEF1 /* Cubit-Bridging-Header.h */,
 				3663DF4122DD699E006657CF /* Assets.xcassets */,
 				3654A84123BC02280066A48F /* LogoViewController.swift */,
 				3663DF4322DD699E006657CF /* LaunchScreen.storyboard */,
 				3663DF4622DD699E006657CF /* Info.plist */,
 			);
-			path = CompSim;
+			path = Cubit;
 			sourceTree = "<group>";
 		};
 		3690EABA23161FCC00CB0B78 /* Scramblers */ = {
@@ -321,8 +321,8 @@
 		D4BADD2EF749D20246CDFB2A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				51B11034A5437C664B7F3657 /* Pods-CompSim.debug.xcconfig */,
-				F2409226874AB7090A497119 /* Pods-CompSim.release.xcconfig */,
+				51B11034A5437C664B7F3657 /* Pods-Cubit.debug.xcconfig */,
+				F2409226874AB7090A497119 /* Pods-Cubit.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -330,9 +330,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3663DF3622DD699D006657CF /* CompSim */ = {
+		3663DF3622DD699D006657CF /* Cubit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3663DF4922DD699E006657CF /* Build configuration list for PBXNativeTarget "CompSim" */;
+			buildConfigurationList = 3663DF4922DD699E006657CF /* Build configuration list for PBXNativeTarget "Cubit" */;
 			buildPhases = (
 				42125AC4B83A2021A84C7815 /* [CP] Check Pods Manifest.lock */,
 				3663DF3322DD699D006657CF /* Sources */,
@@ -344,9 +344,9 @@
 			);
 			dependencies = (
 			);
-			name = CompSim;
-			productName = CompSim;
-			productReference = 3663DF3722DD699D006657CF /* CompSim.app */;
+			name = Cubit;
+			productName = Cubit;
+			productReference = 3663DF3722DD699D006657CF /* Cubit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -373,7 +373,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3663DF3222DD699D006657CF /* Build configuration list for PBXProject "CompSim" */;
+			buildConfigurationList = 3663DF3222DD699D006657CF /* Build configuration list for PBXProject "cubit" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -386,7 +386,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3663DF3622DD699D006657CF /* CompSim */,
+				3663DF3622DD699D006657CF /* Cubit */,
 			);
 		};
 /* End PBXProject section */
@@ -420,15 +420,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CompSim/Pods-CompSim-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Cubit/Pods-Cubit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CompSim/Pods-CompSim-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Cubit/Pods-Cubit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CompSim/Pods-CompSim-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cubit/Pods-Cubit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		42125AC4B83A2021A84C7815 /* [CP] Check Pods Manifest.lock */ = {
@@ -446,7 +446,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CompSim-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Cubit-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -461,7 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3617752323DE1A5A00FC6DCE /* HelpViewController.swift in Sources */,
-				3690EB072316293700CB0B78 /* CompSim-Bridging-Header.h in Sources */,
+				3690EB072316293700CB0B78 /* Cubit-Bridging-Header.h in Sources */,
 				3690EAE52316293200CB0B78 /* TabBarController.swift in Sources */,
 				3634822823A0615F009A14C7 /* SolveTime.swift in Sources */,
 				3690EAE62316293200CB0B78 /* ScrambleReader.swift in Sources */,
@@ -653,23 +653,23 @@
 		};
 		3663DF4A22DD699E006657CF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51B11034A5437C664B7F3657 /* Pods-CompSim.debug.xcconfig */;
+			baseConfigurationReference = 51B11034A5437C664B7F3657 /* Pods-Cubit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = JJ3T82U92L;
-				INFOPLIST_FILE = CompSim/Info.plist;
+				INFOPLIST_FILE = Cubit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.3.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ramisbahi.CompSim;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramisbahi.Cubit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CompSim/CompSim-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cubit/Cubit-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -678,23 +678,23 @@
 		};
 		3663DF4B22DD699E006657CF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2409226874AB7090A497119 /* Pods-CompSim.release.xcconfig */;
+			baseConfigurationReference = F2409226874AB7090A497119 /* Pods-Cubit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = JJ3T82U92L;
-				INFOPLIST_FILE = CompSim/Info.plist;
+				INFOPLIST_FILE = Cubit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.3.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ramisbahi.CompSim;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramisbahi.Cubit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CompSim/CompSim-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cubit/Cubit-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -703,7 +703,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3663DF3222DD699D006657CF /* Build configuration list for PBXProject "CompSim" */ = {
+		3663DF3222DD699D006657CF /* Build configuration list for PBXProject "cubit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3663DF4722DD699E006657CF /* Debug */,
@@ -712,7 +712,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3663DF4922DD699E006657CF /* Build configuration list for PBXNativeTarget "CompSim" */ = {
+		3663DF4922DD699E006657CF /* Build configuration list for PBXNativeTarget "Cubit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3663DF4A22DD699E006657CF /* Debug */,

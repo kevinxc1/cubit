@@ -11,7 +11,7 @@
         <!--Target-->
         <scene sceneID="6gq-pI-Jre">
             <objects>
-                <viewController id="mCZ-mM-XSp" customClass="TargetViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mCZ-mM-XSp" customClass="TargetViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OoU-e4-5Ft">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,7 +93,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GaussianCurve" translatesAutoresizingMaskIntoConstraints="NO" id="fLm-BJ-EhN">
+                            <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLm-BJ-EhN">
                                 <rect key="frame" x="-2" y="443" width="418" height="174"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fLm-BJ-EhN" secondAttribute="height" multiplier="240:100" id="LWg-Zf-WFm"/>
@@ -270,7 +270,7 @@
         <!--Settings-->
         <scene sceneID="iwG-mn-1lc">
             <objects>
-                <viewController id="0Bl-oR-f5Z" customClass="SettingsViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0Bl-oR-f5Z" customClass="SettingsViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fqh-bI-zkc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -586,7 +586,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="handleCuberSelection:" destination="0Bl-oR-f5Z" eventType="touchUpInside" id="6SF-M1-wav"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh6-AO-aXv">
@@ -605,7 +604,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="cuberTapped:" destination="0Bl-oR-f5Z" eventType="touchUpInside" id="0x3-Cu-z7a"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOL-wK-cxq">
@@ -624,7 +622,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="cuberTapped:" destination="0Bl-oR-f5Z" eventType="touchUpInside" id="u3q-gm-7n2"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s15-AM-FbY">
@@ -643,7 +640,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="cuberTapped:" destination="0Bl-oR-f5Z" eventType="touchUpInside" id="U7k-fW-4ad"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FND-gp-cJu">
@@ -662,7 +658,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="cuberTapped:" destination="0Bl-oR-f5Z" eventType="touchUpInside" id="IN4-3V-vTq"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84q-54-Z7O">
@@ -681,7 +676,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="cuberTapped:" destination="0Bl-oR-f5Z" eventType="touchUpInside" id="tTW-ER-j5X"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xp2-It-vDr">
@@ -700,7 +694,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="cuberTapped:" destination="0Bl-oR-f5Z" eventType="touchUpInside" id="APk-Nj-SUl"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMk-cM-USj">
@@ -719,7 +712,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="cuberTapped:" destination="0Bl-oR-f5Z" eventType="touchUpInside" id="6Rs-q9-WoJ"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGh-TY-4lE">
@@ -738,7 +730,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="cuberTapped:" destination="0Bl-oR-f5Z" eventType="touchUpInside" id="7i5-Nj-SWM"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brb-Vl-7Ya">
@@ -757,7 +748,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="cuberTapped:" destination="0Bl-oR-f5Z" eventType="touchUpInside" id="jX7-UP-9JL"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1022,7 +1012,6 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="BigView" destination="fqh-bI-zkc" id="hT3-Dj-Wm6"/>
-                        <outlet property="CuberButton" destination="PJq-5N-yCt" id="z3v-uN-ubB"/>
                         <outlet property="DarkModeControl" destination="LA3-i5-aRu" id="FrW-tU-ZMy"/>
                         <outlet property="DarkModeLabel" destination="R04-Tx-5Ya" id="aMb-Yb-kSf"/>
                         <outlet property="HoldingTimeLabel" destination="ePi-pz-Za3" id="F89-Ra-Y1V"/>
@@ -1049,22 +1038,13 @@
                         <outletCollection property="eventCollection" destination="eLU-vY-iiZ" collectionClass="NSMutableArray" id="GSJ-6B-ldW"/>
                         <outletCollection property="eventCollection" destination="FyO-Wz-1aM" collectionClass="NSMutableArray" id="xwX-qY-n4n"/>
                         <outletCollection property="TopButtons" destination="PJq-5N-yCt" collectionClass="NSMutableArray" id="VqB-cc-aUj"/>
-                        <outletCollection property="cuberCollection" destination="84q-54-Z7O" collectionClass="NSMutableArray" id="vzH-hB-TkN"/>
-                        <outletCollection property="cuberCollection" destination="gh6-AO-aXv" collectionClass="NSMutableArray" id="eep-x8-ivg"/>
-                        <outletCollection property="cuberCollection" destination="FND-gp-cJu" collectionClass="NSMutableArray" id="6Rh-lI-J4U"/>
-                        <outletCollection property="cuberCollection" destination="xOL-wK-cxq" collectionClass="NSMutableArray" id="vt9-xL-jSS"/>
-                        <outletCollection property="cuberCollection" destination="s15-AM-FbY" collectionClass="NSMutableArray" id="IVx-qv-45p"/>
                         <outletCollection property="TopLabels" destination="R04-Tx-5Ya" collectionClass="NSMutableArray" id="eJ1-UN-jR4"/>
                         <outletCollection property="TopLabels" destination="dIR-c7-qh2" collectionClass="NSMutableArray" id="jhN-xG-fRi"/>
                         <outletCollection property="TopLabels" destination="6uq-uX-5mP" collectionClass="NSMutableArray" id="N7B-zO-ugY"/>
                         <outletCollection property="TopLabels" destination="ePi-pz-Za3" collectionClass="NSMutableArray" id="ad8-x2-cyE"/>
                         <outletCollection property="TopLabels" destination="0mn-7A-bip" collectionClass="NSMutableArray" id="pp7-J0-fqL"/>
                         <outletCollection property="TopLabels" destination="uwH-WR-wfc" collectionClass="NSMutableArray" id="M94-K9-8tt"/>
-                        <outletCollection property="cuberCollection" destination="xp2-It-vDr" collectionClass="NSMutableArray" id="wH3-92-CDJ"/>
-                        <outletCollection property="cuberCollection" destination="RMk-cM-USj" collectionClass="NSMutableArray" id="SUj-Iq-DzD"/>
                         <outletCollection property="TopLabels" destination="7Lm-QJ-n9i" collectionClass="NSMutableArray" id="1ul-Yt-4Gn"/>
-                        <outletCollection property="cuberCollection" destination="SGh-TY-4lE" collectionClass="NSMutableArray" id="gxB-J3-ANZ"/>
-                        <outletCollection property="cuberCollection" destination="brb-Vl-7Ya" collectionClass="NSMutableArray" id="ti2-kV-uCG"/>
                         <outletCollection property="eventCollection" destination="Kdq-Qi-9kL" collectionClass="NSMutableArray" id="9cu-WX-eJP"/>
                     </connections>
                 </viewController>
@@ -1075,7 +1055,7 @@
         <!--Average Detail View Controller-->
         <scene sceneID="uHH-dz-DL6">
             <objects>
-                <viewController storyboardIdentifier="AverageDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AvC-tB-OuD" customClass="AverageDetailViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AverageDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AvC-tB-OuD" customClass="AverageDetailViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R3d-AM-Pfb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1177,7 +1157,7 @@
         <!--Logo View Controller-->
         <scene sceneID="Nb0-5F-cub">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="YCs-P2-xce" customClass="LogoViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="YCs-P2-xce" customClass="LogoViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="onG-oC-39f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1205,7 +1185,7 @@
         <!--Stats View Controller-->
         <scene sceneID="cQX-Ox-96D">
             <objects>
-                <viewController storyboardIdentifier="StatsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kqA-DF-Yjh" customClass="StatsViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StatsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kqA-DF-Yjh" customClass="StatsViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M4I-BC-dr8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1374,7 +1354,7 @@
                         <outlet property="SessionStackView" destination="SYS-AT-ZdR" id="W51-QO-b04"/>
                         <outlet property="StatsTableView" destination="xr8-T2-eEg" id="VMW-dy-7XZ"/>
                         <outlet property="WinningWidth" destination="mhL-Wu-bBw" id="E9k-9E-SQb"/>
-                        <segue destination="AvC-tB-OuD" kind="custom" identifier="SlideSegue" customClass="SlideSegue" customModule="CompSim" id="3MC-0Q-g5t"/>
+                        <segue destination="AvC-tB-OuD" kind="custom" identifier="SlideSegue" customClass="SlideSegue" customModule="Cubit" id="3MC-0Q-g5t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="646-JQ-Yis" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1384,7 +1364,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="dpl-Va-Kbt">
             <objects>
-                <tabBarController id="Icw-Z7-67k" customClass="TabBarController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="Icw-Z7-67k" customClass="TabBarController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="y1w-Rh-ojI"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="RJK-re-Hls">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -1407,7 +1387,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1692,7 +1672,7 @@
         <!--Timer View Controller-->
         <scene sceneID="dnS-0d-u1e">
             <objects>
-                <viewController storyboardIdentifier="timerViewController" id="Hed-3y-khG" customClass="TimerViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timerViewController" id="Hed-3y-khG" customClass="TimerViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uf3-ge-j3k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1800,7 +1780,7 @@
         <!--Help View Controller-->
         <scene sceneID="NSa-WF-7xF">
             <objects>
-                <viewController storyboardIdentifier="HelpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6TU-WA-hyd" customClass="HelpViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6TU-WA-hyd" customClass="HelpViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5cU-cQ-6uP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="2200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1814,7 +1794,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="CompSim" image="arrow.turn.down.left" catalog="system">
+                                <state key="normal" title="Cubit" image="arrow.turn.down.left" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1823,7 +1803,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="BackToCompSimPressed:" destination="6TU-WA-hyd" eventType="touchUpInside" id="6Cn-Cu-imn"/>
+                                    <action selector="BackToCubitPressed:" destination="6TU-WA-hyd" eventType="touchUpInside" id="6Cn-Cu-imn"/>
                                     <action selector="StatsButtonPressed:" destination="AvC-tB-OuD" eventType="touchUpInside" id="E4J-08-jrx"/>
                                 </connections>
                             </button>
@@ -1869,7 +1849,7 @@
                                                 <rect key="frame" x="10" y="5" width="394" height="176.66666666666666"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
-                                                        <string key="content">CompSim is a professional speedcubing competition simulator. This is different from a regular timer; with CompSim, you do solves in an average of 5, mean of 3, or best of 3 format, depending on the event you are doing. In many ways, it works like a normal cubing timer, but it comes with its own unique features as well.
+                                                        <string key="content">Cubit is a professional speedcubing competition simulator. This is different from a regular timer; with Cubit, you do solves in an average of 5, mean of 3, or best of 3 format, depending on the event you are doing. In many ways, it works like a normal cubing timer, but it comes with its own unique features as well.
 </string>
                                                         <attributes>
                                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2480,7 +2460,7 @@ Cg
         <!--Result View Controller-->
         <scene sceneID="vp3-Zs-Ojd">
             <objects>
-                <viewController storyboardIdentifier="ResultView" id="aUe-TH-pA1" customClass="ResultViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultView" id="aUe-TH-pA1" customClass="ResultViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bd8-uC-vl3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2554,7 +2534,7 @@ Cg
                                     <segue destination="Icw-Z7-67k" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="z5C-xH-DX3"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happyKevin" translatesAutoresizingMaskIntoConstraints="NO" id="4Tu-dJ-3lW">
+                            <imageView hidden="YES" clipsSubviews="YES" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Tu-dJ-3lW">
                                 <rect key="frame" x="-374" y="0.0" width="1162" height="546"/>
                             </imageView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="1Vm-8i-lBH">
@@ -2694,11 +2674,11 @@ Cg
             </objects>
             <point key="canvasLocation" x="-2749.275362318841" y="593.47826086956525"/>
         </scene>
-        <!--CompSim-->
+        <!--Cubit-->
         <scene sceneID="xdf-II-jW1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1fs-7q-vwl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="CompSim" image="timer" selectedImage="timer" id="TMk-UC-HpA"/>
+                    <tabBarItem key="tabBarItem" title="Cubit" image="timer" selectedImage="timer" id="TMk-UC-HpA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YzX-TX-tMg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -2716,7 +2696,7 @@ Cg
         <!--Draw Scramble View Controller-->
         <scene sceneID="V3T-92-cB2">
             <objects>
-                <viewController id="sad-od-IlV" customClass="DrawScrambleViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sad-od-IlV" customClass="DrawScrambleViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m5W-es-OPb">
                         <rect key="frame" x="0.0" y="0.0" width="368" height="147.33333333333334"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3421,7 +3401,7 @@ Cg
         <!--View Controller-->
         <scene sceneID="VqI-M7-pJf">
             <objects>
-                <viewController id="Ntz-5f-QjN" customClass="ViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ntz-5f-QjN" customClass="ViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V2B-nM-dFq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4009,7 +3989,7 @@ Cg
         <!--Timer View Controller-->
         <scene sceneID="NuO-Vm-o0x">
             <objects>
-                <viewController id="Ae5-bF-F6a" customClass="TimerViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ae5-bF-F6a" customClass="TimerViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QXe-ru-Z7R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4213,7 +4193,7 @@ Cg
         <!--Timer View Controller-->
         <scene sceneID="9jG-tf-Qi5">
             <objects>
-                <viewController id="h94-So-fQ9" customClass="TimerViewController" customModule="CompSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h94-So-fQ9" customClass="TimerViewController" customModule="Cubit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XeO-E2-imQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4318,12 +4298,9 @@ Cg
         </scene>
     </scenes>
     <resources>
-        <image name="GaussianCurve" width="1116" height="462"/>
         <image name="arrow.turn.down.left" catalog="system" width="64" height="48"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="64" height="52"/>
         <image name="bubble.middle.top.fill" catalog="system" width="64" height="54"/>
-        <image name="happyBill" width="1162" height="546"/>
-        <image name="happyKevin" width="1162" height="546"/>
         <image name="logo" width="1000" height="1000"/>
         <image name="questionmark.circle" catalog="system" width="64" height="60"/>
         <image name="settings" width="29" height="29"/>

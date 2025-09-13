@@ -1,13 +1,10 @@
 //
-//  CompSim-Bridging-Header.h
-//  CompSim
-//
-//  Created by Rami Sbahi on 8/8/19.
-//  Copyright © 2019 Rami Sbahi. All rights reserved.
+//  Cubit-Bridging-Header.h
+//  Cubit
 //
 
-#ifndef CompSim_Bridging_Header_h
-#define CompSim_Bridging_Header_h
+#ifndef Cubit_Bridging_Header_h
+#define Cubit_Bridging_Header_h
 
 #import "TwoPhaseScrambler.h"
 #import "Clock.h"
@@ -18,4 +15,4 @@
 #import "BigCubeScrambler.h"
 
 
-#endif /* CompSim_Bridging_Header_h */
+#endif /* Cubit_Bridging_Header_h */

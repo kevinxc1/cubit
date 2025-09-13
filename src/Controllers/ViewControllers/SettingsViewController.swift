@@ -1,9 +1,6 @@
 //
-//  EventViewController.swift
-//  CompSim
-//
-//  Created by Rami Sbahi on 8/4/19.
-//  Copyright © 2019 Rami Sbahi. All rights reserved.
+//  SettingsViewController.swift
+//  Cubit
 //
 
 import UIKit
@@ -27,7 +24,6 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet var eventCollection: [UIButton]!
     
-    @IBOutlet var cuberCollection: [UIButton]!
     
     @IBOutlet var TopButtons: [UIButton]!
     
@@ -37,13 +33,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var LittleView: UIView!
     
     
-    @IBOutlet weak var CuberButton: UIButton!
     @IBOutlet weak var ScrambleTypeButton: UIButton!
     
     @IBOutlet weak var InspectionVoiceAlertsControl: UISegmentedControl!
     @IBOutlet weak var TimerUpdateControl: UISegmentedControl!
     
-    let cuberDictionary = ["Bill" : "Bill Wang", "Lucas" : "Lucas Etter", "Feliks" : "Feliks Zemdegs", "Kian" : "Kian Mansour", "Random" : "Random", "Rami" : "Rami Sbahi", "Patrick" : "Patrick Ponce", "Max" : "Max Park", "Kevin" : "Kevin Hays"]
     
     let realm = try! Realm()
     
@@ -169,15 +163,6 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBAction func handleCuberSelection(_ sender: Any) {
-        
-        cuberCollection.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
     
     override func viewDidLoad() // only need to do these things when lose instance anyways, so call in view did load (selected index wont change when go between tabs)
     {
@@ -230,7 +215,7 @@ class SettingsViewController: UIViewController {
             InspectionVoiceAlertsControl.selectedSegmentIndex = 1
         }
         
-        CuberButton.setTitle("Cuber: \(cuberDictionary[ViewController.cuber]!)", for: .normal)
+        // Cuber selection removed
         
         HoldingTimeSlider.value = ViewController.holdingTime
         HoldingTimeLabel.text = String(format: "Holding Time: %.2f", ViewController.holdingTime)
@@ -298,25 +283,6 @@ class SettingsViewController: UIViewController {
     }
     
     
-    @IBAction func cuberTapped(_ sender: UIButton) {
-        
-        cuberCollection.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
-        
-        guard let title = sender.currentTitle else
-        {
-            return // doesn't have title
-        }
-        
-        CuberButton.setTitle("Cuber: \(title)", for: .normal)
-        
-        let nameArr = title.components(separatedBy: " ")
-        ViewController.cuber = nameArr[0]
-    }
     
     
     @IBAction func eventTapped(_ sender: UIButton) {

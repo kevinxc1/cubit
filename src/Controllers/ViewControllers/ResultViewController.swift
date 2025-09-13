@@ -1,9 +1,6 @@
 //
 //  ResultViewController.swift
-//  CompSim
-//
-//  Created by Rami Sbahi on 7/16/19.
-//  Copyright © 2019 Rami Sbahi. All rights reserved.
+//  Cubit
 //
 
 import UIKit
@@ -43,7 +40,6 @@ class ResultViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
     
-    let cubers = ["Bill", "Lucas", "Feliks", "Kian", "Rami", "Patrick", "Max", "Kevin"]
     
     var times: [SolveTime] = []
     
@@ -112,7 +108,7 @@ class ResultViewController: UIViewController {
        else // winning time
        {
             WinningAverageLabel.isHidden = false
-            BackgroundImage.isHidden = false
+            BackgroundImage.isHidden = true
             try! realm.write {
                 ViewController.mySession.usingWinningTime.append(true)
                      // update winning average label & win/lose
@@ -129,15 +125,6 @@ class ResultViewController: UIViewController {
         }
     }
     
-    func randomImage(happy: Bool) -> UIImage
-    {
-        let cuber = cubers.randomElement()
-        if happy
-        {
-            return UIImage(named: "happy\(cuber!)")!
-        }
-        return UIImage(named: "sad\(cuber!)")!
-    }
     
     func makeDarkMode()
     {
@@ -208,14 +195,7 @@ class ResultViewController: UIViewController {
         try! realm.write {
             ViewController.mySession.results.append(false)
         }
-        if(ViewController.cuber == "Random")
-        {
-            BackgroundImage.image = randomImage(happy: false)
-        }
-        else
-        {
-            BackgroundImage.image = UIImage(named: "sad\(ViewController.cuber)")
-        }
+        // Image display removed - keeping text color change
         MyAverageLabel.textColor = .red
         MyAverageLabel.text = MyAverageLabel.text
     }
@@ -225,14 +205,7 @@ class ResultViewController: UIViewController {
         try! realm.write {
             ViewController.mySession.results.append(true) // win
         }
-        if(ViewController.cuber == "Random")
-        {
-            BackgroundImage.image = randomImage(happy: true)
-        }
-        else
-        {
-            BackgroundImage.image = UIImage(named: "happy\(ViewController.cuber)")
-        }
+        // Image display removed - keeping text color change
         MyAverageLabel.textColor = ViewController.greenColor()
         MyAverageLabel.text = MyAverageLabel.text
     }
@@ -269,10 +242,7 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-
-        BackgroundImage.addGestureRecognizer(tapGesture)
-        BackgroundImage.isUserInteractionEnabled = true
+        // Image tap gesture removed
         
         
         let newDevices = ["x86_64", "iPhone10,3", "iPhone10,6", "iPhone11,2", "iPhone11,4", "iPhone11,6", "iPhone11,8", "iPhone12,1", "iPhone12,3", "iPhone12,5"] // have weird thing at top of screen
@@ -309,23 +279,6 @@ class ResultViewController: UIViewController {
         SecondTime5.topAnchor.constraint(equalTo: SecondTime4.bottomAnchor).isActive = true
     }
     
-    @objc func imageTapped()
-    {
-        print("image tapped")
-        do {
-           try AVAudioSession.sharedInstance().setCategory(.playback)
-        } catch(let error) {
-            print(error.localizedDescription)
-        }
-        if(ViewController.mySession.results.last!) // win
-        {
-            winningSound()
-        }
-        else
-        {
-            losingSound()
-        }
-    }
     
     func winningSound()
     {

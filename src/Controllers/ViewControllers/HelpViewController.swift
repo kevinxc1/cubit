@@ -1,9 +1,6 @@
 //
 //  HelpViewController.swift
-//  CompSim
-//
-//  Created by Rami Sbahi on 1/26/20.
-//  Copyright © 2020 Rami Sbahi. All rights reserved.
+//  Cubit
 //
 
 import UIKit
@@ -38,7 +35,7 @@ class HelpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func BackToCompSimPressed(_ sender: Any) {
+    @IBAction func BackToCubitPressed(_ sender: Any) {
         
         let transition:CATransition = CATransition()
             transition.duration = 0.3
