@@ -16,8 +16,7 @@ class TimerViewController: UIViewController {
     let TIMING = 4
     var timerPhase = 0
     var timerTime: Float = 0.00
-    var inspectionTimer = Timer()
-    var timer = Timer()
+    private let timerManager = TimerManager()
     let penalties = [2, 0, 1] // index of selector --> penalty (DNF, none, +2)
     
     
@@ -28,7 +27,7 @@ class TimerViewController: UIViewController {
     static var resultTime: Float = 0.00
     static var penalty = 0
     
-    var audioPlayer = AVAudioPlayer()
+    private let audioManager = AudioManager()
     @IBOutlet var BigView: UIView!
     
     @IBOutlet weak var PenaltySelector: UISegmentedControl!
@@ -49,13 +48,29 @@ class TimerViewController: UIViewController {
             startTimer()
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timerManager.invalidateAllTimers()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TimerLabel.font = ViewController.fontToFitHeight(view: BigView, multiplier: 0.22, name: "Geeza Pro")
-        SubmitButton.titleLabel?.font = ViewController.fontToFitHeight(view: BigView, multiplier: 0.07, name: "Futura")
+        // Modern typography
+        TimerLabel.font = UIFont.cubitTimerFont(size: 72)
+        TimerLabel.adjustsFontSizeToFitWidth = true
+        TimerLabel.minimumScaleFactor = 0.3
         
+        SubmitButton.titleLabel?.font = .cubitHeadline
+        CancelButton.titleLabel?.font = .cubitHeadline
+        
+        // Modern button styling
+        SubmitButton.makePrimary()
+        CancelButton.makeSecondary()
+        
+        // Modern appearance setup
+        AppearanceManager.shared.setupAppearance(for: self)
         
         if(ViewController.inspection)
         {
@@ -82,10 +97,12 @@ class TimerViewController: UIViewController {
     func makeDarkMode()
     {
         DarkBackground.isHidden = false
-        TimerLabel.textColor = .white
-        SubmitButton.backgroundColor = .darkGray
-        CancelButton.backgroundColor = .darkGray
+        TimerLabel.textColor = .cubitPrimary
+        SubmitButton.backgroundColor = .cubitButtonBackground
+        CancelButton.backgroundColor = .cubitButtonBackground
         
+        // Apply modern appearance
+        AppearanceManager.shared.applyLegacyDarkMode(to: self)
     }
     
     func gestureSetup()
@@ -108,12 +125,14 @@ class TimerViewController: UIViewController {
         print("touches began")
         if timerPhase == INSPECTION && ViewController.holdingTime > 0.01
         {
-            TimerLabel.textColor = UIColor.red
+            TimerLabel.textColor = .cubitError
             timerPhase = FROZEN
+            haptic(.light)
         }
         else if timerPhase == TIMING
         {
             stopTimer()
+            haptic(.success)
         }
     }
     
@@ -134,9 +153,8 @@ class TimerViewController: UIViewController {
         timerPhase = INSPECTION
         var inspectionTime = 15
         TimerLabel.text = String(inspectionTime)
-        let eightPlayer = setUpEightSecSound()
-        let twelvePlayer = setUpTwelveSecSound()
-        inspectionTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block:
+        audioManager.setupAudioSession()
+        _ = timerManager.scheduleInspectionTimer(timeInterval: 1, repeats: true, block:
             { (time) in
             if(self.timerPhase == self.INSPECTION || self.timerPhase == self.FROZEN || self.timerPhase == self.READY)
             {
@@ -154,7 +172,7 @@ class TimerViewController: UIViewController {
                                 {
                                     if(self.timerPhase == self.INSPECTION)
                                     {
-                                        eightPlayer!.play()
+                                        self.audioManager.playSound(.eightSeconds)
                                     }
                                 }
                             }
@@ -168,7 +186,7 @@ class TimerViewController: UIViewController {
                                 {
                                     if(self.timerPhase == self.INSPECTION)
                                     {
-                                        twelvePlayer!.play()
+                                        self.audioManager.playSound(.twelveSeconds)
                                     }
                                 }
                             }
@@ -194,51 +212,6 @@ class TimerViewController: UIViewController {
         })
     }
     
-    func setUpEightSecSound() -> AVAudioPlayer?
-    {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.ambient)
-        } catch(let error) {
-            print(error.localizedDescription)
-            return nil
-        }
-        let pathToSound = Bundle.main.path(forResource: "8seconds", ofType: "mp3")
-        let url = URL(fileURLWithPath: pathToSound!)
-        
-        do
-        {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer.prepareToPlay()
-            return audioPlayer
-        }
-        catch{
-            print("failed to play eight sec sound")
-            return nil
-        }
-    }
-    
-    func setUpTwelveSecSound() -> AVAudioPlayer?
-    {
-        do {
-           try AVAudioSession.sharedInstance().setCategory(.ambient)
-        } catch(let error) {
-            print(error.localizedDescription)
-            return nil
-        }
-        let pathToSound = Bundle.main.path(forResource: "12seconds", ofType: "mp3")
-        let url = URL(fileURLWithPath: pathToSound!)
-        
-        do
-        {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer.prepareToPlay()
-            return audioPlayer
-        }
-        catch{
-            print("failed to play eight sec sound")
-            return nil
-        }
-    }
     
     @objc func handleLongPress(sender: UILongPressGestureRecognizer) // time has been done
     {
@@ -265,31 +238,34 @@ class TimerViewController: UIViewController {
     
     func doMakeReady()
     {
-        TimerLabel.textColor = .green
+        // Animate color transition
+        UIView.transition(with: TimerLabel, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            self.TimerLabel.textColor = .cubitSuccess
+        })
+        
         timerPhase = READY
+        haptic(.selection)
     }
     
     func cancel()
     {
-        TimerLabel.textColor = ViewController.darkMode ? .white : .black
+        // Animate color transition back
+        UIView.transition(with: TimerLabel, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            self.TimerLabel.textColor = .cubitPrimary
+        })
+        
         timerPhase = INSPECTION
+        haptic(.light)
     }
     
     func startTimer()
     {
-        inspectionTimer.invalidate()
+        timerManager.invalidateInspectionTimer()
         timerTime = 0
         timerPhase = TIMING
-        if(ViewController.darkMode)
-        {
-            TimerLabel.textColor = UIColor.white
-        }
-        else
-        {
-            TimerLabel.textColor = UIColor.black
-        }
+        TimerLabel.textColor = .cubitPrimary
         
-        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {_ in
+        _ = timerManager.scheduleTimer(timeInterval: 0.01, repeats: true, block: {_ in
             
             if(self.timerPhase == self.TIMING)
             {
@@ -332,7 +308,7 @@ class TimerViewController: UIViewController {
     {
         self.TimerLabel.text = SolveTime.makeMyString(num: SolveTime.makeIntTime(num: self.timerTime))
         TimerViewController.resultTime = self.timerTime
-        timer.invalidate()
+        timerManager.invalidateTimer()
         timerPhase = IDLE
         PenaltySelector.isHidden = false
         SubmitButton.isHidden = false

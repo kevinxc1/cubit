@@ -33,30 +33,83 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let realm = try! Realm()
     
     @IBAction func newSession(_ sender: Any) {
+        haptic(.light)
         
-        let alertService = AlertService()
-        let alert = alertService.alert(placeholder: "Name", usingPenalty: false, keyboardType: 1, myTitle: "New Session",
-                                       completion: {
-            
-            let input = alertService.myVC.TextField.text!
+        let alert = UIAlertController(title: "New Session", message: "Enter a name for your new session", preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Session name"
+            textField.autocapitalizationType = .words
+            textField.returnKeyType = .done
+        }
+        
+        let createAction = UIAlertAction(title: "Create", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            let input = alert.textFields?[0].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             
             let maxCharacters = 20
             
-            if(input.count < maxCharacters && self.sessionNamed(title: input) == nil) // creating new session
-            {
+            if input.count < maxCharacters && self.sessionNamed(title: input) == nil {
                 self.createNewSession(name: input)
+                self.haptic(.success)
+            } else if input.count >= maxCharacters {
+                self.showError(message: "Session name too long!")
+            } else {
+                self.showError(message: "Session name already in use!")
             }
-            else if input.count >= maxCharacters
-            {
-                self.alertInvalid(alertMessage: "Session name too long!")
-            }
-            else // already used name
-            {
-                self.alertInvalid(alertMessage: "Session name already in use!")
-            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(createAction)
+        alert.addAction(cancelAction)
+        
+        createAction.isEnabled = false
+        
+        // Enable create button when text is entered
+        NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: alert.textFields?[0], queue: .main) { _ in
+            createAction.isEnabled = !(alert.textFields?[0].text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
+        }
+        
+        present(alert, animated: true)
+    }
+    
+    private func showError(message: String) {
+        haptic(.error)
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
+    @IBAction func exportSession(_ sender: Any) {
+        haptic(.light)
+        
+        let alert = UIAlertController(title: "Export Session", message: "Choose export format", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "CSV Spreadsheet", style: .default) { _ in
+            DataExportManager.shareSession(ViewController.mySession, from: self, format: .csv)
+            self.haptic(.success)
         })
         
-        self.present(alert, animated: true)
+        alert.addAction(UIAlertAction(title: "JSON Data", style: .default) { _ in
+            DataExportManager.shareSession(ViewController.mySession, from: self, format: .json)
+            self.haptic(.success)
+        })
+        
+        alert.addAction(UIAlertAction(title: "Text Summary", style: .default) { _ in
+            DataExportManager.shareSession(ViewController.mySession, from: self, format: .text)
+            self.haptic(.success)
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        // iPad support
+        if let popover = alert.popoverPresentationController {
+            popover.sourceView = sender as? UIView
+            popover.sourceRect = (sender as? UIView)?.bounds ?? CGRect.zero
+        }
+        
+        present(alert, animated: true)
     }
     
     @IBAction func resetPressed(_ sender: Any) {

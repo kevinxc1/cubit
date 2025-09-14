@@ -121,11 +121,23 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        // Modern button styling
         HelpButton.layer.cornerRadius = HelpButton.frame.size.height / 2.0
+        NewScrambleButton.makeSecondary()
+        ResetButton.makeDestructive()
+        SubmitButton.makePrimary()
+        
+        // Adaptive text for small screens
         if(NewScrambleButton.frame.size.width < 120)
         {
             NewScrambleButton.setTitle("New Scr.", for: .normal)
         }
+        
+        // Apply modern appearance and accessibility
+        AppearanceManager.shared.setupAppearance(for: self)
+        AccessibilityManager.shared.setupAccessibility(for: self)
         print(NewScrambleButton.frame.size.width)
     }
     
@@ -321,6 +333,16 @@ class ViewController: UIViewController {
             DrawScrambleView.isHidden = true
             self.respondToGesture(gesture: gesture)
         }
+        
+        // Double tap to generate new scramble (modern UX)
+        if gesture.numberOfTouches == 1 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                if gesture.numberOfTapsRequired == 2 {
+                    self?.haptic(.light)
+                    self?.newScramblePressed(self!)
+                }
+            }
+        }
     }
     
     @objc func handleLongPress(sender: UIGestureRecognizer)
@@ -431,14 +453,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetPressed(_ sender: Any) {
+        haptic(.warning)
         let alertService = SimpleAlertService()
         let alert = alertService.alert(myTitle: "Reset Average?", completion: {
             self.reset()
+            self.haptic(.success)
         })
         self.present(alert, animated: true)
     }
     
     @IBAction func newScramblePressed(_ sender: Any) {
+        haptic(.light)
         ViewController.mySession.scrambler.genScramble()
         ScrambleLabel.text = ViewController.mySession.scrambler.currentScramble
     }
@@ -516,25 +541,22 @@ class ViewController: UIViewController {
     
     func addSolve()
     {
-        let alertService = AlertService()
-        let alert = alertService.alert(placeholder: "Time", usingPenalty: true, keyboardType: 0, myTitle: "Add Solve",
-                                       completion: {
-            
-            let inputTime = alertService.myVC.TextField.text!
-            let penalties = [2, 0, 1] // adjust for index
-            let inputPenalty = penalties[alertService.myVC.PenaltySelector.selectedSegmentIndex]
-            
-            if ViewController.validEntryTime(time: inputTime)
-            {
-                self.updateTimes(enteredTime: inputTime, penalty: inputPenalty) // add time, show label, change parentheses
-            }
-            else
-            {
-                self.alertValidTime(alertMessage: "Please enter valid time")
-            }
-        })
+        haptic(.light)
         
-        self.present(alert, animated: true)
+        SolveInputManager.showSolveInputSheet(from: self, action: .add) { [weak self] timeString, penalty in
+            guard let self = self, let timeString = timeString else { return }
+            
+            let penalties = [0, 2, 1] // Map UI indices to penalty values: none, DNF, +2
+            let mappedPenalty = penalties[min(penalty, penalties.count - 1)]
+            
+            if ViewController.validEntryTime(time: timeString) {
+                self.updateTimes(enteredTime: timeString, penalty: mappedPenalty)
+                self.haptic(.success)
+            } else {
+                self.alertValidTime(alertMessage: "Please enter valid time")
+                self.haptic(.error)
+            }
+        }
     }
     
     static func validEntryTime(time: String) -> Bool

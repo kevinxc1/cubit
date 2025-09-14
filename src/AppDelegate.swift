@@ -21,7 +21,7 @@ extension UIDevice {
     }
 }
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -40,7 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let sessionName = "sessionName"
     static let timerUpdate = "timerUpdate"
     
-    lazy var realm = try! Realm()
+    lazy var realm: Realm = {
+        do {
+            return try Realm()
+        } catch {
+            fatalError("Failed to initialize Realm: \(error)")
+        }
+    }()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let config = Realm.Configuration(
@@ -81,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ViewController.mySession = results[0] // will change to last session, just in case
             for result in results
             {
-                if(result.name == UserDefaults.standard.string(forKey: AppDelegate.sessionName)) // last session left on
+                if(result.name == Settings.sessionName) // last session left on
                 {
                     ViewController.mySession = result
                     ViewController.mySession.updateScrambler()
@@ -99,9 +105,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func addFirstSession()
     {
         let session = ViewController.mySession
-        try! realm.write
-        {
-            realm.add(session)
+        do {
+            try realm.write {
+                realm.add(session)
+            }
+        } catch {
+            print("Failed to add first session: \(error)")
         }
     }
     
@@ -117,9 +126,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("entered background")
         if ViewController.mySession.currentIndex == 5 // temporary solution
         {
-            try! realm.write
-            {
-                ViewController.mySession.reset()
+            do {
+                try realm.write {
+                    ViewController.mySession.reset()
+                }
+            } catch {
+                print("Failed to reset session on background: \(error)")
             }
         }
         saveSettings()
@@ -141,9 +153,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("will terminate")
         if ViewController.mySession.currentIndex == 5 // temporary solution
         {
-            try! realm.write
-            {
-                ViewController.mySession.reset()
+            do {
+                try realm.write {
+                    ViewController.mySession.reset()
+                }
+            } catch {
+                print("Failed to reset session on termination: \(error)")
             }
         }
         saveSettings()
@@ -153,16 +168,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         print("setting to \(ViewController.darkMode)")
         
-        let defaults = UserDefaults.standard
-        
-        defaults.set(ViewController.darkMode, forKey: AppDelegate.darkMode)
-        defaults.set(ViewController.cuber, forKey: AppDelegate.cuber)
-        defaults.set(ViewController.timing, forKey: AppDelegate.timing)
-        defaults.set(ViewController.inspection, forKey: AppDelegate.inspection)
-        defaults.set(ViewController.holdingTime, forKey: AppDelegate.holdingTime)
-        defaults.set(ViewController.mySession.scrambler.myEvent, forKey: AppDelegate.event)
-        defaults.set(ViewController.mySession.name, forKey: AppDelegate.sessionName)
-        defaults.set(ViewController.timerUpdate, forKey: AppDelegate.timerUpdate)
+        Settings.darkMode = ViewController.darkMode
+        Settings.cuber = ViewController.cuber
+        Settings.timing = ViewController.timing
+        Settings.inspection = ViewController.inspection
+        Settings.holdingTime = ViewController.holdingTime
+        Settings.event = ViewController.mySession.scrambler.myEvent
+        Settings.sessionName = ViewController.mySession.name
+        Settings.timerUpdate = ViewController.timerUpdate
     }
 
 //    // MARK: UISceneSession Lifecycle
